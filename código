@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+void inverteString(char *string);
+
+int main(){
+    char string[] = "hoje o dia pode ser diferente do que foi ontem";
+    printf("String original: %s\n", string);
+    inverteString(string);
+    printf("String modificada: %s\n", string);
+
+
+    return 0;
+}
+
+void inverteString(char *string){
+    int i = 0, j = 0;
+    char aux;
+    int tam = strlen(string);
+
+    for (i = 0, j = tam - 1; i < j; i++, j--){
+        aux = string[i];
+        string[i] = string[j];
+        string[j] = aux;
+    }
+}
